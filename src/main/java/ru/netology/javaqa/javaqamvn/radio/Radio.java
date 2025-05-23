@@ -1,24 +1,33 @@
 package ru.netology.javaqa.javaqamvn.radio;
 public class Radio {
-    public int radioNumber;
-    public int soundVolume;
+    private int radioNumber;
+    private int soundVolume;
 
-    public void setToMaxNumber() {
-        radioNumber = 9;
+   // public Radio(int radioNumber) {
+   //     this.radioNumber = radioNumber;
+   // }
+
+    //public void setToMaxNumber() {
+//radioNumber = 9;
+    //}
+
+
+    public int getRadioNumber() {
+        return radioNumber;
     }
 
-    public void setRadioNumber(int newRadioNumber) {
-        if (newRadioNumber < 0) {
+    public void setRadioNumber(int RadioNumber) {
+        if (RadioNumber < 0) {
             return;
         }
-        if (newRadioNumber > 9) {
+        if (RadioNumber > 9) {
             return;
         }
-        radioNumber = newRadioNumber;
+        this.radioNumber = RadioNumber;
     }
 
     public void nextRadioNumber() {
-        if (radioNumber < 9) {
+        if (radioNumber != 9) {
             radioNumber = radioNumber + 1;
         } else {
             radioNumber = 0;
@@ -26,7 +35,7 @@ public class Radio {
     }
 
     public void prevRadioNumber() {
-        if (radioNumber > 0) {
+        if (radioNumber != 0) {
             radioNumber = radioNumber - 1;
 
         } else {
@@ -34,18 +43,23 @@ public class Radio {
         }
     }
 
-    public void setToMaxSoundVolume() {
-        soundVolume = 100;
+    //public void setToMaxSoundVolume() {
+      //  soundVolume = 100;
+   // }
+
+
+    public int getSoundVolume() {
+        return soundVolume;
     }
 
-    public void setSoundVolume(int newSoundVolume) {
-        if (newSoundVolume < 0) {
+    public void setSoundVolume(int SoundVolume) {
+        if (SoundVolume < 0) {
             return;
         }
-        if (newSoundVolume > 100) {
+        if (SoundVolume > 100) {
             return;
         }
-        soundVolume = newSoundVolume;
+        this.soundVolume = SoundVolume;
     }
 
     public void increaseVolume() {
