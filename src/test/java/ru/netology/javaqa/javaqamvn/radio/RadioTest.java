@@ -5,8 +5,19 @@ import org.junit.jupiter.api.Test;
 public class RadioTest {
 
     @Test
+    public void testRadio() {
+        Radio radio = new Radio(2, 8, 3, 90);
+        Assertions.assertEquals(2, radio.getMinRadioStation());
+        Assertions.assertEquals(8, radio.getMaxRadioStation());
+        Assertions.assertEquals(2, radio.getRadioNumber());
+        Assertions.assertEquals(3, radio.getMinRadioVolume());
+        Assertions.assertEquals(90, radio.getMaxRadioVolume());
+        Assertions.assertEquals(3, radio.getSoundVolume());
+
+    }
+    @Test
     public void radioNumberA() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(0, 9, 0, 100);
         radio.setRadioNumber(5);
         int expected = 5;
         int actual = radio.getRadioNumber();
@@ -14,7 +25,7 @@ public class RadioTest {
     }
     @Test
     public void radioNumberB() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(0, 9, 0, 100);
         radio.setRadioNumber(-1);
         int expected = 0;
         int actual = radio.getRadioNumber();
@@ -22,7 +33,7 @@ public class RadioTest {
     }
     @Test
     public void radioNumberC() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(0, 9, 0, 100);
         radio.setRadioNumber(0);
         int expected = 0;
         int actual = radio.getRadioNumber();
@@ -30,7 +41,7 @@ public class RadioTest {
     }
     @Test
     public void radioNumberD() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(0, 9, 0, 100);
         radio.setRadioNumber(1);
         int expected = 1;
         int actual = radio.getRadioNumber();
@@ -38,7 +49,7 @@ public class RadioTest {
     }
     @Test
     public void radioNumberE() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(0, 9, 0, 100);
         radio.setRadioNumber(10);
         int expected = 0;
         int actual = radio.getRadioNumber();
@@ -46,7 +57,7 @@ public class RadioTest {
     }
     @Test
     public void radioNumberF() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(0, 9, 0, 100);
         radio.setRadioNumber(9);
         int expected = 9;
         int actual = radio.getRadioNumber();
@@ -55,7 +66,7 @@ public class RadioTest {
 
     @Test
     public void radioNumberG() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(0, 9, 0, 100);
         radio.setRadioNumber(8);
         int expected = 8;
         int actual = radio.getRadioNumber();
@@ -63,7 +74,7 @@ public class RadioTest {
     }
     @Test
     public void nextRadioNumberA() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(0, 9, 0, 100);
         radio.setRadioNumber(1);
         radio.nextRadioNumber();
         int expected = 2;
@@ -73,7 +84,7 @@ public class RadioTest {
 
     @Test
     public void prevRadioNumberA() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(0, 9, 0, 100);
         radio.setRadioNumber(9);
         radio.prevRadioNumber();
         int expected = 8;
@@ -83,7 +94,7 @@ public class RadioTest {
 
     @Test
     public void SoundVolumeA() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(0, 9, 0, 100);
         radio.setSoundVolume(0);
         int expected = 0;
         int actual = radio.getSoundVolume();
@@ -91,7 +102,7 @@ public class RadioTest {
     }
     @Test
     public void SoundVolumeB() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(0, 9, 0, 100);
         radio.setSoundVolume(1);
         int expected = 1;
         int actual = radio.getSoundVolume();
@@ -99,7 +110,7 @@ public class RadioTest {
     }
     @Test
     public void SoundVolumeC() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(0, 9, 0, 100);
         radio.setSoundVolume(2);
         int expected = 2;
         int actual = radio.getSoundVolume();
@@ -107,7 +118,7 @@ public class RadioTest {
     }
     @Test
     public void SoundVolumeD() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(0, 9, 0, 100);
         radio.setSoundVolume(100);
         int expected = 100;
         int actual = radio.getSoundVolume();
@@ -115,7 +126,7 @@ public class RadioTest {
     }
     @Test
     public void SoundVolumeE() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(0, 9, 0, 100);
         radio.setSoundVolume(99);
         int expected = 99;
         int actual = radio.getSoundVolume();
@@ -123,7 +134,7 @@ public class RadioTest {
     }
     @Test
     public void SoundVolumeF() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(0, 9, 0, 100);
         radio.setSoundVolume(98);
         int expected = 98;
         int actual = radio.getSoundVolume();
@@ -131,7 +142,7 @@ public class RadioTest {
     }
     @Test
     public void increaseVolumeA() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(0, 9, 0, 100);
         radio.setSoundVolume(100);
         radio.increaseVolume();
         int expected = 100;
@@ -140,7 +151,7 @@ public class RadioTest {
     }
     @Test
     public void increaseVolumeB() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(0, 9, 0, 100);
         radio.setSoundVolume(99);
         radio.increaseVolume();
         int expected = 100;
@@ -149,7 +160,7 @@ public class RadioTest {
     }
     @Test
     public void increaseVolumeC() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(0, 9, 0, 100);
         radio.setSoundVolume(98);
         radio.increaseVolume();
         int expected = 99;
@@ -158,7 +169,7 @@ public class RadioTest {
     }
     @Test
     public void increaseVolumeD() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(0, 9, 0, 100);
         radio.setSoundVolume(2);
         radio.increaseVolume();
         int expected = 3;
@@ -167,7 +178,7 @@ public class RadioTest {
     }
     @Test
     public void increaseVolumeE() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(0, 9, 0, 100);
         radio.setSoundVolume(1);
         radio.increaseVolume();
         int expected = 2;
@@ -176,7 +187,7 @@ public class RadioTest {
     }
     @Test
     public void increaseVolumeF() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(0, 9, 0, 100);
         radio.setSoundVolume(0);
         radio.increaseVolume();
         int expected = 1;
@@ -186,7 +197,7 @@ public class RadioTest {
 
     @Test
     public void decreaseVolumeA() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(0, 9, 0, 100);
         radio.setSoundVolume(0);
         radio.decreaseVolume();
         int expected = 0;
@@ -195,7 +206,7 @@ public class RadioTest {
     }
     @Test
     public void decreaseVolumeB() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(0, 9, 0, 100);
         radio.setSoundVolume(1);
         radio.decreaseVolume();
         int expected = 0;
@@ -204,7 +215,7 @@ public class RadioTest {
     }
     @Test
     public void decreaseVolumeC() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(0, 9, 0, 100);
         radio.setSoundVolume(2);
         radio.decreaseVolume();
         int expected = 1;
@@ -213,7 +224,7 @@ public class RadioTest {
     }
     @Test
     public void decreaseVolumeD() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(0, 9, 0, 100);
         radio.setSoundVolume(99);
         radio.decreaseVolume();
         int expected = 98;
@@ -222,7 +233,7 @@ public class RadioTest {
     }
     @Test
     public void decreaseVolumeE() {
-        Radio radio = new Radio();
+        Radio radio = new Radio(0, 9, 0, 100);
         radio.setSoundVolume(100);
         radio.decreaseVolume();
         int expected = 99;

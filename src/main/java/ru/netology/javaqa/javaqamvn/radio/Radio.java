@@ -1,9 +1,36 @@
 package ru.netology.javaqa.javaqamvn.radio;
 public class Radio {
-    private int radioNumber;
-    private int soundVolume;
 
-   // public Radio(int radioNumber) {
+
+    private int maxRadioStation = 9;
+    private int minRadioStation = 0;
+    private int radioNumber = minRadioStation;
+    private int maxRadioVolume = 100;
+    private int minRadioVolume = 0;
+    private int soundVolume = minRadioVolume;
+    public Radio (int minRadioStation, int maxRadioStation, int minRadioVolume, int maxRadioVolume) {
+        this.minRadioStation = minRadioStation;
+        this.maxRadioStation = maxRadioStation;
+        this.radioNumber = minRadioStation;
+        this.minRadioVolume = minRadioVolume;
+        this.maxRadioVolume = maxRadioVolume;
+        this.soundVolume = minRadioVolume;
+    }
+    public int getMaxRadioStation() {
+        return maxRadioStation;
+    }
+    public int getMinRadioStation() {
+         return minRadioStation;
+    }
+
+    public int getMaxRadioVolume() {
+        return maxRadioVolume;
+    }
+
+    public int getMinRadioVolume() {
+        return minRadioVolume;
+    }
+    // public Radio(int radioNumber) {
    //     this.radioNumber = radioNumber;
    // }
 
@@ -20,14 +47,14 @@ public class Radio {
         if (RadioNumber < 0) {
             return;
         }
-        if (RadioNumber > 9) {
+        if (RadioNumber > maxRadioStation) {
             return;
         }
         this.radioNumber = RadioNumber;
     }
 
     public void nextRadioNumber() {
-        if (radioNumber != 9) {
+        if (radioNumber != maxRadioStation) {
             radioNumber = radioNumber + 1;
         } else {
             radioNumber = 0;
@@ -56,14 +83,14 @@ public class Radio {
         if (SoundVolume < 0) {
             return;
         }
-        if (SoundVolume > 100) {
+        if (SoundVolume > maxRadioVolume) {
             return;
         }
         this.soundVolume = SoundVolume;
     }
 
     public void increaseVolume() {
-        if (soundVolume < 100) {
+        if (soundVolume < maxRadioVolume) {
             soundVolume = soundVolume + 1;
         }
     }
