@@ -1,29 +1,22 @@
 package ru.netology.javaqa.javaqamvn.radio;
+
 public class Radio {
     private int radioNumber;
     private int soundVolume;
-
-   // public Radio(int radioNumber) {
-   //     this.radioNumber = radioNumber;
-   // }
-
-    //public void setToMaxNumber() {
-//radioNumber = 9;
-    //}
 
 
     public int getRadioNumber() {
         return radioNumber;
     }
 
-    public void setRadioNumber(int RadioNumber) {
-        if (RadioNumber < 0) {
+    public void setRadioNumber(int radioNumber) {
+        if (radioNumber < 0) {
             return;
         }
-        if (RadioNumber > 9) {
+        if (radioNumber > 9) {
             return;
         }
-        this.radioNumber = RadioNumber;
+        this.radioNumber = radioNumber;
     }
 
     public void nextRadioNumber() {
@@ -43,23 +36,19 @@ public class Radio {
         }
     }
 
-    //public void setToMaxSoundVolume() {
-      //  soundVolume = 100;
-   // }
-
 
     public int getSoundVolume() {
         return soundVolume;
     }
 
-    public void setSoundVolume(int SoundVolume) {
-        if (SoundVolume < 0) {
+    public void setSoundVolume(int soundVolume) {
+        if (soundVolume < 0) {
             return;
         }
-        if (SoundVolume > 100) {
+        if (soundVolume > 100) {
             return;
         }
-        this.soundVolume = SoundVolume;
+        this.soundVolume = soundVolume;
     }
 
     public void increaseVolume() {
