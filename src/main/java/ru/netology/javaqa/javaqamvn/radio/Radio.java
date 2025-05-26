@@ -1,4 +1,5 @@
 package ru.netology.javaqa.javaqamvn.radio;
+
 public class Radio {
 
 
@@ -8,7 +9,8 @@ public class Radio {
     private int maxRadioVolume = 100;
     private int minRadioVolume = 0;
     private int soundVolume = minRadioVolume;
-    public Radio (int minRadioStation, int maxRadioStation, int minRadioVolume, int maxRadioVolume) {
+
+    public Radio(int minRadioStation, int maxRadioStation, int minRadioVolume, int maxRadioVolume) {
         this.minRadioStation = minRadioStation;
         this.maxRadioStation = maxRadioStation;
         this.radioNumber = minRadioStation;
@@ -16,11 +18,17 @@ public class Radio {
         this.maxRadioVolume = maxRadioVolume;
         this.soundVolume = minRadioVolume;
     }
+
+    public Radio(int quantity) {
+        maxRadioStation = minRadioStation + quantity;
+    }
+
     public int getMaxRadioStation() {
         return maxRadioStation;
     }
+
     public int getMinRadioStation() {
-         return minRadioStation;
+        return minRadioStation;
     }
 
     public int getMaxRadioVolume() {
@@ -30,27 +38,20 @@ public class Radio {
     public int getMinRadioVolume() {
         return minRadioVolume;
     }
-    // public Radio(int radioNumber) {
-   //     this.radioNumber = radioNumber;
-   // }
-
-    //public void setToMaxNumber() {
-//radioNumber = 9;
-    //}
 
 
     public int getRadioNumber() {
         return radioNumber;
     }
 
-    public void setRadioNumber(int RadioNumber) {
-        if (RadioNumber < 0) {
+    public void setRadioNumber(int radioNumber) {
+        if (radioNumber < 0) {
             return;
         }
-        if (RadioNumber > maxRadioStation) {
+        if (radioNumber > maxRadioStation) {
             return;
         }
-        this.radioNumber = RadioNumber;
+        this.radioNumber = radioNumber;
     }
 
     public void nextRadioNumber() {
@@ -70,23 +71,19 @@ public class Radio {
         }
     }
 
-    //public void setToMaxSoundVolume() {
-      //  soundVolume = 100;
-   // }
-
 
     public int getSoundVolume() {
         return soundVolume;
     }
 
-    public void setSoundVolume(int SoundVolume) {
-        if (SoundVolume < 0) {
+    public void setSoundVolume(int soundVolume) {
+        if (soundVolume < 0) {
             return;
         }
-        if (SoundVolume > maxRadioVolume) {
+        if (soundVolume > maxRadioVolume) {
             return;
         }
-        this.soundVolume = SoundVolume;
+        this.soundVolume = soundVolume;
     }
 
     public void increaseVolume() {
