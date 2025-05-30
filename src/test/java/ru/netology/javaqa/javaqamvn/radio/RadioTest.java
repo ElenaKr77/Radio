@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 
 public class RadioTest {
 
+
     @Test
     public void testRadio() {
         Radio radio = new Radio(2, 8, 3, 90);
